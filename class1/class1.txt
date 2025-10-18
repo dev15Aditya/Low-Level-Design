@@ -1,0 +1,37 @@
+“What makes a good design?”
+
+Let's think of a notification system. What would be considered a good design for it?
+
+To consider code as a good design, it should have some core qualities.
+1. Extensibility -> New notification type can be added easily (like email, sms, in-app)
+2. Reliability -> Notification should be delivered, no matter the conditions.
+3. Scalability -> handles growth in users or messages
+4. Resuability -> can be plugged into different services
+
+These qualities don't happen by accident. They emerge when we follow stong design principles, especially S.O.L.I.D. ones
+
+S.O.L.I.D. Principles are considered the Backbone of clean design.
+
+1. S -> Single Responsibility Principle(SRP)
+A class should have only one reason to change.
+For example if we have a NotificationService, and it handles notification sending and logging. It has two reasons to change, which violates SRP.
+So we should split our NotificationService into
+- NotificationSender
+- NotificationLogger
+Keeps class focused and testable.
+
+2. O -> Open/Close Principle(OCP)
+A class should be open for extension, but closed for modification.
+If we want to add WhatsApp notification, we shouldn't modify notification service.
+Instead, extend it by added new WhatsAppNotification class implementing INotificationChannel.
+
+3. L -> Liskov Substitution Principle(LSP)
+Subclass should be replaceable for their base classes without breaking behavior.
+If EmailNotification extends Notification, then anywhere we expect a Notification, we should be able to use EmailNotification safely.
+
+4. I -> Interface Seggregation Principle(ISP)
+Don't force class to implement Interfaces they don't need.
+Instead on one INotification interface with methods for sendEmail(), sendSMS(), etc., split into smaller focused ones (EmailSender, SMSSender)
+
+5. D -> Dependency Inversion Principle(DIP)
+Depend on abstraction, not concrete classes

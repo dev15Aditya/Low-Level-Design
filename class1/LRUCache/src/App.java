@@ -7,6 +7,8 @@ public class App {
         lruCache.put(1, 5);
         lruCache.put(3, 5);
 
+        System.out.println(lruCache.get(1));
+
         lruCache.printLRU();
     }
 }

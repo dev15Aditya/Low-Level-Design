@@ -1,0 +1,16 @@
+Why Design Patterns?
+
+Design patterns are proven solutions to common problems that developers face repeatedly. 
+Think of them as tested recipes or blueprints that guide you on how to structure your code.
+
+Key Points:
+- They don't provide exact code that you copy and paste
+- Instead, they give you a template or approach for solving problems
+- They help you write cleaner, more maintainable code
+- They make it easier for other developers to understand your code
+
+Benefits:
+- Save time by using solutions that have already been tested
+- Avoid common mistakes that others have already solved
+- Communicate design ideas more effectively with your team
+- Make your code more flexible and easier to change later
